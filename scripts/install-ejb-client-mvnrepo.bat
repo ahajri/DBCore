@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=../target/DBCore-client.jar -DgroupId=com.ejb.core     -DartifactId=DBCore-client -Dversion=1.0.0 -Dpackaging=jar

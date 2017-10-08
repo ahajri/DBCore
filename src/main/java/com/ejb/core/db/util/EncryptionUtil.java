@@ -1,4 +1,4 @@
-package com.ejb.core.hbase.util;
+package com.ejb.core.db.util;
 
 import java.security.Key;
 import java.security.spec.AlgorithmParameterSpec;

@@ -14,22 +14,29 @@ import javax.ejb.Startup;
  * @author ahajri
  *
  */
-@Singleton(name="properties")
+@Singleton(name = "properties")
 @Startup
 public class EJBProperties {
 
-	Properties properties;
+	Properties properties = null;
 
 	@PostConstruct
-	public void init() throws IOException {
-		InputStream inputStream = this.getClass().getClassLoader()
-				.getResourceAsStream("application.properties");
+	public void init()  {
+		InputStream inputStream = EJBProperties.class.getClassLoader().getResourceAsStream("application.properties");
 
-		properties = new Properties();
-		System.out.println("InputStream is: " + inputStream);
-		// Loading the properties
-		properties.load(inputStream);
+		if (properties == null) {
+			properties = new Properties();
+		}
+
+		try {
+			properties.load(inputStream);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 
+	public String getProperty(String key) {
+		return properties.getProperty(key);
+	}
 }

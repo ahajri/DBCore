@@ -63,7 +63,7 @@
 					<hostname>127.0.0.1</hostname>
 					<port>9990</port>
 					<username>ahajri</username>
-					<password>Pass@Caccia55</password>
+					<password>Pass@Admin</password>
 					<name>DBCore-jar-with-dependencies.jar</name>
 				</configuration>
 			</plugin>
